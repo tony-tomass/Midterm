@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -20,7 +21,7 @@ public class SectionSixCoding extends AppCompatActivity {
 
     EditText name_et, number_et, type_et, fandom_et, on_et, ultimate_et, price_et;
     ListView list_lv;
-    Button save_bt;
+    Button save_bt, switch_bt;
     Cursor cursor;
     SimpleCursorAdapter simpleCursorAdapter;
     String[] col_names = new String[] {
@@ -58,8 +59,10 @@ public class SectionSixCoding extends AppCompatActivity {
         price_et = findViewById(R.id.price_ET);
         list_lv = findViewById(R.id.list_LV);
         save_bt = findViewById(R.id.save_BT);
+        switch_bt = findViewById(R.id.switch_bt);
 
         save_bt.setOnClickListener(save_listener);
+        switch_bt.setOnClickListener(switch_listener);
 
         registerForContextMenu(list_lv);
 
@@ -132,4 +135,12 @@ public class SectionSixCoding extends AppCompatActivity {
         return super.onContextItemSelected(item);
 
     }
+
+    View.OnClickListener switch_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent switch_to_ec15 = new Intent(getApplicationContext(), ExtraCreditNum15.class);
+            startActivity(switch_to_ec15);
+        }
+    };
 }
