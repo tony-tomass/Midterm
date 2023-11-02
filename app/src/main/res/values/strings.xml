@@ -6,7 +6,7 @@
     <string name="funkopop_number">Number</string>
     <string name="funkopop_type">Type</string>
     <string name="funkopop_fandom">Fandom</string>
-    <string name="funkopop_on">On? (True/False)</string>
+    <string name="funkopop_on">On? (1 for True / 0 for False)</string>
     <string name="funkopop_ultimate">Ultimate</string>
     <string name="funkopop_price">Price</string>
 </resources>

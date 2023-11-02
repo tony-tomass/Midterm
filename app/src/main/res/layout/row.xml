@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingBottom="12dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name_row_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="_id"
+        android:textSize="1sp"
+        android:visibility="invisible"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableRow
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/number_row_TV"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/type_row_TV"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fandom"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/fandom_row_TV"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/on_row_TV"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ultimate"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/ultimate_row_TV"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/price_row_TV"
+                />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>
