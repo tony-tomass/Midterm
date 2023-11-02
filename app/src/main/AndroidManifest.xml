@@ -12,8 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Midterm"
         tools:targetApi="31">
+        <provider
+            android:name=".SectionSixContentProvider"
+            android:authorities="com.midterm.sectionsixprovider"
+            android:enabled="true"
+            android:exported="true">
+
+        </provider>
+
+        <activity
+            android:name=".PickActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SectionSixCoding"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
