@@ -21,7 +21,7 @@ public class SectionSixCoding extends AppCompatActivity {
 
     EditText name_et, number_et, type_et, fandom_et, on_et, ultimate_et, price_et;
     ListView list_lv;
-    Button save_bt, switch_bt;
+    Button save_bt, switch_bt, update_bt;
     Cursor cursor;
     SimpleCursorAdapter simpleCursorAdapter;
     String[] col_names = new String[] {
@@ -59,10 +59,12 @@ public class SectionSixCoding extends AppCompatActivity {
         price_et = findViewById(R.id.price_ET);
         list_lv = findViewById(R.id.list_LV);
         save_bt = findViewById(R.id.save_BT);
-        switch_bt = findViewById(R.id.switch_bt);
+        //switch_bt = findViewById(R.id.switch_bt);
+        update_bt = findViewById(R.id.switch_bt);
 
         save_bt.setOnClickListener(save_listener);
-        switch_bt.setOnClickListener(switch_listener);
+        //switch_bt.setOnClickListener(switch_listener);
+        update_bt.setOnClickListener(update_listener);
 
         registerForContextMenu(list_lv);
 
@@ -136,11 +138,42 @@ public class SectionSixCoding extends AppCompatActivity {
 
     }
 
+    /*
     View.OnClickListener switch_listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent switch_to_ec15 = new Intent(getApplicationContext(), ExtraCreditNum15.class);
             startActivity(switch_to_ec15);
+        }
+    };
+     */
+
+    View.OnClickListener update_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            TextView name_row_tv = findViewById(view_ids[1]);
+            TextView number_row_tv = findViewById(view_ids[2]);
+
+            String selected_clauses = SectionSixContentProvider.COL1_NAME + " = ? " + " AND " +
+                    SectionSixContentProvider.COL2_NAME + " = ? ";
+
+            String[] selected_args = new String[]{
+                    name_row_tv.getText().toString().trim(),
+                    number_row_tv.getText().toString().trim(),
+            };
+
+            ContentValues new_vals = new ContentValues();
+            new_vals.put(SectionSixContentProvider.COL1_NAME, name_et.getText().toString().trim());
+            new_vals.put(SectionSixContentProvider.COL2_NAME, Integer.parseInt(number_et.getText().toString().trim()));
+            new_vals.put(SectionSixContentProvider.COL3_NAME, type_et.getText().toString().trim());
+            new_vals.put(SectionSixContentProvider.COL4_NAME, fandom_et.getText().toString().trim());
+            new_vals.put(SectionSixContentProvider.COL5_NAME, Integer.parseInt(on_et.getText().toString().trim()));
+            new_vals.put(SectionSixContentProvider.COL6_NAME, ultimate_et.getText().toString().trim());
+            new_vals.put(SectionSixContentProvider.COL7_NAME, Double.parseDouble(price_et.getText().toString().trim()));
+
+            getContentResolver().update(SectionSixContentProvider.CONTENT_URI, new_vals, selected_clauses, selected_args);
+
         }
     };
 }

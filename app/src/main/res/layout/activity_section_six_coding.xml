@@ -88,6 +88,14 @@
             android:text="Save to List"
             android:id="@+id/save_BT"
             />
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Update Entry"
+            android:id="@+id/switch_bt"
+            android:layout_marginTop="10dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,14 +114,7 @@
             android:layout_gravity="center"
             />
 
-        <Button
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Go to EC 15"
-            android:id="@+id/switch_bt"
-            android:layout_marginTop="10dp"
-            />
+
 
     </LinearLayout>
 
